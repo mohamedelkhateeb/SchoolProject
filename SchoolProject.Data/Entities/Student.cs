@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolProject.Data
+namespace SchoolProject.Data.Entities
 {
-   public class Student
+    public class Student
     {
         [Key]
         public int StudID { get; set; }
