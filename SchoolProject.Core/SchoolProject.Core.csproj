@@ -8,8 +8,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolProject.Data\SchoolProject.Data.csproj" />
-    <ProjectReference Include="..\SchoolProject.Infrustructure\SchoolProject.Infrustructure.csproj" />
+    <ProjectReference Include="..\SchoolProject.Infrustructure\SchoolProject.Infrastructure.csproj" />
     <ProjectReference Include="..\SchoolProject.Service\SchoolProject.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Students\Commands\Validations\Handlers\" />
+    <Folder Include="Features\Students\Commands\Validations\Models\" />
+    <Folder Include="Features\Students\Queries\" />
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
   </ItemGroup>
 
 </Project>

@@ -18,11 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolProject.Core\SchoolProject.Core.csproj" />
-    <ProjectReference Include="..\SchoolProject.Infrustructure\SchoolProject.Infrustructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\SchoolProject.Infrustructure\SchoolProject.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

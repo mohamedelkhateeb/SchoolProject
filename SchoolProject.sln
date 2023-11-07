@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Api", "SchoolProject.Api\SchoolProject.Api.csproj", "{BEEFB8C1-96F4-4B49-8D67-EED8C9C96A18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Api", "SchoolProject.Api\SchoolProject.Api.csproj", "{BEEFB8C1-96F4-4B49-8D67-EED8C9C96A18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Data", "SchoolProject.Data\SchoolProject.Data.csproj", "{FDBA47E7-84E9-45CE-8BD5-DDFE4BD997C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Data", "SchoolProject.Data\SchoolProject.Data.csproj", "{FDBA47E7-84E9-45CE-8BD5-DDFE4BD997C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Infrustructure", "SchoolProject.Infrustructure\SchoolProject.Infrustructure.csproj", "{E466199D-8102-4642-87F2-820C4186979B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Infrastructure", "SchoolProject.Infrustructure\SchoolProject.Infrastructure.csproj", "{E466199D-8102-4642-87F2-820C4186979B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Service", "SchoolProject.Service\SchoolProject.Service.csproj", "{1BBDD29C-4E0E-4687-B77C-1E5DA7E56211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Service", "SchoolProject.Service\SchoolProject.Service.csproj", "{1BBDD29C-4E0E-4687-B77C-1E5DA7E56211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolProject.Core", "SchoolProject.Core\SchoolProject.Core.csproj", "{9221B72A-B60E-416B-A6B5-45D88E06CC84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolProject.Core", "SchoolProject.Core\SchoolProject.Core.csproj", "{9221B72A-B60E-416B-A6B5-45D88E06CC84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
