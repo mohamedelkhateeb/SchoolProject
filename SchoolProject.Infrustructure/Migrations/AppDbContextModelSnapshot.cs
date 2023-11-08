@@ -22,7 +22,7 @@ namespace SchoolProject.Infrustructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SchoolProject.Data.Department", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.Department", b =>
                 {
                     b.Property<int>("DID")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.ToTable("Departments");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.DepartmentSubject", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.DepartmentSubject", b =>
                 {
                     b.Property<int>("DeptSubID")
                         .ValueGeneratedOnAdd()
@@ -63,7 +63,7 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.ToTable("DepartmentSubject");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.Student", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.Student", b =>
                 {
                     b.Property<int>("StudID")
                         .ValueGeneratedOnAdd()
@@ -94,9 +94,35 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.HasIndex("DID");
 
                     b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            StudID = 1,
+                            Address = "123 Main St",
+                            DID = 1,
+                            Name = "John Doe",
+                            Phone = "555-1234"
+                        },
+                        new
+                        {
+                            StudID = 2,
+                            Address = "456 Elm St",
+                            DID = 2,
+                            Name = "Jane Smith",
+                            Phone = "555-5678"
+                        },
+                        new
+                        {
+                            StudID = 3,
+                            Address = "789 Oak St",
+                            DID = 1,
+                            Name = "Bob Johnson",
+                            Phone = "555-9012"
+                        });
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.StudentSubject", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.StudentSubject", b =>
                 {
                     b.Property<int>("StudSubID")
                         .ValueGeneratedOnAdd()
@@ -119,7 +145,7 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.ToTable("StudentSubjects");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.Subjects", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.Subjects", b =>
                 {
                     b.Property<int>("SubID")
                         .ValueGeneratedOnAdd()
@@ -140,15 +166,15 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.ToTable("Subjects");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.DepartmentSubject", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.DepartmentSubject", b =>
                 {
-                    b.HasOne("SchoolProject.Data.Department", "Department")
+                    b.HasOne("SchoolProject.Data.Entities.Department", "Department")
                         .WithMany("DepartmentSubjects")
                         .HasForeignKey("DID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolProject.Data.Subjects", "Subjects")
+                    b.HasOne("SchoolProject.Data.Entities.Subjects", "Subjects")
                         .WithMany("DepartmetsSubjects")
                         .HasForeignKey("SubID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -159,24 +185,24 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.Navigation("Subjects");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.Student", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.Student", b =>
                 {
-                    b.HasOne("SchoolProject.Data.Department", "Department")
+                    b.HasOne("SchoolProject.Data.Entities.Department", "Department")
                         .WithMany("Students")
                         .HasForeignKey("DID");
 
                     b.Navigation("Department");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.StudentSubject", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.StudentSubject", b =>
                 {
-                    b.HasOne("SchoolProject.Data.Student", "Student")
+                    b.HasOne("SchoolProject.Data.Entities.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SchoolProject.Data.Subjects", "Subject")
+                    b.HasOne("SchoolProject.Data.Entities.Subjects", "Subject")
                         .WithMany("StudentsSubjects")
                         .HasForeignKey("SubID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -187,14 +213,14 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.Navigation("Subject");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.Department", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.Department", b =>
                 {
                     b.Navigation("DepartmentSubjects");
 
                     b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("SchoolProject.Data.Subjects", b =>
+            modelBuilder.Entity("SchoolProject.Data.Entities.Subjects", b =>
                 {
                     b.Navigation("DepartmetsSubjects");
 

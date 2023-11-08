@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Infrustructure;
 using SchoolProject.Service;
+using SchoolProject.Core;
 using SchoolProject.Infrustructure.Data;
 using System;
 
@@ -17,7 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 
 //Extention Methods (Repos) Dependancy Injections
 builder.Services.InfrustractureDependencies()
-    .ServiceDependencies();
+       .ServiceDependencies()
+       .CoreDependencies();
 
 // Add services to the container.
 builder.Services.AddControllers();
