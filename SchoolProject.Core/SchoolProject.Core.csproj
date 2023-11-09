@@ -19,7 +19,7 @@
     <Folder Include="Features\Students\Commands\Validations\Models\" />
     <Folder Include="Features\Students\Queries\Validations\Handlers\" />
     <Folder Include="Features\Students\Queries\Validations\Models\" />
-    <Folder Include="Mapping\" />
+    <Folder Include="Mapping\studentMapper\CommandMapping\" />
   </ItemGroup>
 
   <ItemGroup>
