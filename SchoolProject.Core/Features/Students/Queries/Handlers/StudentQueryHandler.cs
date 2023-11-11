@@ -2,6 +2,7 @@
 using MediatR;
 using SchoolProject.Core.Bases;
 using SchoolProject.Core.Features.Students.Commands.Models;
+using SchoolProject.Core.Features.Students.Queries.Models;
 using SchoolProject.Core.Features.Students.Queries.Results;
 using SchoolProject.Data.Entities;
 using SchoolProject.Service.Abstracts;
@@ -13,12 +14,13 @@ using System.Threading.Tasks;
 
 namespace SchoolProject.Core.Features.Students.Commands.Handlers
 {
-    public class StudentHandler :ResponseHandler, IRequestHandler<GetStudentsListQuery,Response<List<StudentResponse>>>
+    public class StudentQueryHandler :ResponseHandler, IRequestHandler<GetStudentsListQuery,Response<List<StudentResponse>>>,
+                                                       IRequestHandler<GetStudentByIdQuery , Response<GetStudentByIdResult>>
     {
         private readonly IStudentService _studentService;
 
         private readonly IMapper _mapper;
-        public StudentHandler(IStudentService studentService, IMapper mapper)
+        public StudentQueryHandler(IStudentService studentService, IMapper mapper)
         {
             _studentService = studentService;
             _mapper = mapper;
@@ -27,6 +29,14 @@ namespace SchoolProject.Core.Features.Students.Commands.Handlers
         {
             var studentsList = await _studentService.GetStudentsListAsync();
             return Success(_mapper.Map<List<StudentResponse>>(studentsList));
+        }
+
+        public async Task<Response<GetStudentByIdResult>> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
+        {
+            var student = await _studentService.GetStudentByIdAsync(request.Id);
+            if (student == null) return NotFound<GetStudentByIdResult>("Student Not Found");
+            var result = _mapper.Map<GetStudentByIdResult>(student);
+            return Success(result);
         }
     }
 }

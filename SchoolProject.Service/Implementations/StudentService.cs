@@ -18,9 +18,19 @@ namespace SchoolProject.Service.Implementations
         {
             _studentRepository = studentRepository;
         }
+
         public async Task<List<Student>> GetStudentsListAsync()
         {
             return await _studentRepository.GetStudentsAsync();
+        }
+        public async Task<Student> GetStudentByIdAsync(int id)
+        {
+            var student = _studentRepository.GetTableNoTracking()
+                                                  .Include(x => x.Department)
+                                                  .Where(x => x.StudID == id)
+                                                  .FirstOrDefault();
+
+            return student;
         }
     }
 }

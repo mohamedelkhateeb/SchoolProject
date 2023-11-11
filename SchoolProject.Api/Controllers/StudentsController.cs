@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SchoolProject.Core.Features.Students.Commands.Models;
+using SchoolProject.Core.Features.Students.Queries.Models;
+using SchoolProject.Data.AppMetaData;
 
 namespace SchoolProject.Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class StudentsController : ControllerBase
     {
@@ -15,10 +16,17 @@ namespace SchoolProject.Api.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet("GetAllStudents")]
+        [HttpGet(Routes.StudentRoutes.GetAllStudents)]
         public async Task<IActionResult> GetAllStudents()
         {
             var response = await _mediator.Send(new GetStudentsListQuery());
+            return Ok(response);
+        }
+
+        [HttpGet(Routes.StudentRoutes.GetStudentById)]
+        public async Task<IActionResult> GetStudentById([FromRoute] int id)
+        {
+            var response = await _mediator.Send(new GetStudentByIdQuery(id));
             return Ok(response);
         }
     }

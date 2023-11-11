@@ -12,7 +12,7 @@ using SchoolProject.Infrustructure.Data;
 namespace SchoolProject.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231109063410_newTables")]
+    [Migration("20231109185915_newTables")]
     partial class newTables
     {
         /// <inheritdoc />

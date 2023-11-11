@@ -13,22 +13,22 @@ namespace SchoolProject.Core.Bases
         {
 
         }
-        public Response(T data, string message = null)
-        {
-            IsSuccess = true;message;
-            Data = data;
-        }
-        public Response(string message)
-        {
-            IsSuccess = false;
-            Message = message;
-        }
-        public Response(string message, bool succeeded)
-        {
-            IsSuccess = succeeded;
-            Message = message;
-            Message = 
-        }
+        //public Response(T data, string message = null)
+        //{
+        //    IsSuccess = true;
+        //    Data = data;
+        //}
+        //public Response(string message)
+        //{
+        //    IsSuccess = false;
+        //    Message = message;
+        //}
+        //public Response(string message, bool succeeded)
+        //{
+        //    IsSuccess = succeeded;
+        //    Message = message;
+        //    Message = message;
+        //}
 
         public HttpStatusCode StatusCode { get; set; }
         public object Meta { get; set; }
