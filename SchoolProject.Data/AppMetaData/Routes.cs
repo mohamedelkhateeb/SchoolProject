@@ -8,7 +8,7 @@ namespace SchoolProject.Data.AppMetaData
 {
     public class Routes
     {
-        public const string root = "API/";
+        public const string root = "Api/";
         public const string version = "V1/";
         public const string Rule = root + version;
 
