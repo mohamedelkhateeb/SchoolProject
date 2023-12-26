@@ -21,6 +21,11 @@ namespace SchoolProject.Data.Entities
         public string DName { get; set; }
         public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<DepartmentSubject> DepartmentSubjects { get; set; }
+
+        public static implicit operator Department(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
